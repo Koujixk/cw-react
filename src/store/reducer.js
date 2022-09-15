@@ -1,6 +1,4 @@
-import { 
-
-} from './actions';
+import { COUNTING_TIMER, SET_USERNAME } from './actions';
 
 const questions = [
   {
@@ -42,12 +40,23 @@ const questions = [
 ]
 
 const initialState = {
-  questions: [],
+  questions: questions,
+  timer: 0,
+  userName: ''
 }
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-  
+    case COUNTING_TIMER:
+      return{
+        ...state,
+        timer: action.payload
+      }
+    case SET_USERNAME:
+      return{
+        ...state,
+        userName: action.payload
+      }
     default:
       return state;
   }

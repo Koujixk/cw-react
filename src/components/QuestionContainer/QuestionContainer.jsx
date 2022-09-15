@@ -1,7 +1,7 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import {Radio, Result, Space, Alert } from 'antd';
 
 import { setCorrectAnswers, setUserName } from '../../store/actions'
@@ -11,7 +11,8 @@ import { store } from '../../store/store';
 
 export const QuestionContainer = (props) => {
     const dispatch = useDispatch()
-    const {isStartWindow, timer, isResult} = props
+    const navigate = useNavigate()
+    const {isStartWindow, isResult} = props
     
     const questions = useSelector((store) => store.questions)
     const correctAnswered = useSelector((store) => store.correctAnswered)
@@ -23,7 +24,29 @@ export const QuestionContainer = (props) => {
     const [questionCounter, setQuestionCounter] = useState(0)
     const [value, setValue] = useState(0)
     const [correctAnswers, setCorrect] = useState(0)
-    
+    const [minutes, setMinutes] = useState(0);
+    const [seconds, setSeconds] =  useState(5);
+    useEffect(()=>{
+    const interval = setInterval(() => {
+            if (seconds > 0) {
+                setSeconds(seconds - 1);
+            }
+            if (seconds === 0) {
+                if (minutes === 0) {
+                    clearInterval(interval)
+                    navigate('/results')
+                    dispatch(setCorrectAnswers(correctAnswers))
+                } else {
+                    setMinutes(minutes - 1);
+                    setSeconds(59);
+                }
+            } 
+        }, 1000)
+        return ()=> {
+            clearInterval(interval);
+          };
+    }, [minutes, seconds]);
+
 
     const setNickName = (user) => {
         setUsername(user)
@@ -43,11 +66,9 @@ export const QuestionContainer = (props) => {
             }
             if(value.correct){
                 console.log('correct')
-                const gg = correctAnswers + 1 
-                setCorrect(gg)
+                setCorrect(correctAnswers + 1 )
+                dispatch(setCorrectAnswers(correctAnswers))
             }
-            dispatch(setCorrectAnswers(correctAnswers))
-            console.log(value)
             setValue(0)
         } else{
             setRadioAlert(true)
@@ -61,7 +82,8 @@ export const QuestionContainer = (props) => {
         setUserName('')
         setQuestionCounter(0)
         setValue(0)
-
+        setMinutes(1)
+        setSeconds(0)
     }
  
     return (
@@ -105,6 +127,7 @@ export const QuestionContainer = (props) => {
                         </Space>
                     </Radio.Group>
                 {questionCounter == 9  && value ? <Link to='/results'><button className='question-button' onClick={() => questionCounting(questionCounter) }>Next</button></Link> : <button className='question-button' onClick={() => questionCounting(questionCounter) }>Next</button>}
+                <p>U have {minutes}:{seconds} time left</p>
                 </div>
             }
             {isResult && 

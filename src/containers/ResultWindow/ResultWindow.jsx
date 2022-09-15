@@ -3,6 +3,6 @@ import { QuestionContainer } from '../../components/QuestionContainer/QuestionCo
 
 export const ResultWindow = () => {
   return (
-    <QuestionContainer isStartWindow={false}/>
+    <QuestionContainer isStartWindow={false} isResult={true}/>
   )
 }

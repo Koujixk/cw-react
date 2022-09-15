@@ -4,7 +4,7 @@ import { QuestionContainer } from '../../components/QuestionContainer/QuestionCo
 export const StartWindow = () => {
   return (
     <div>
-        <QuestionContainer isStartWindow={true}/>
+        <QuestionContainer isStartWindow={true} isResult={false}/>
     </div>
   )
 }

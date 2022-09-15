@@ -1,5 +1,4 @@
-import { Switch } from 'antd';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import { Questions } from './containers/Questions/Questions';
 import { ResultWindow } from './containers/ResultWindow/ResultWindow';

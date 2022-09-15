@@ -24,8 +24,8 @@ export const QuestionContainer = (props) => {
     const [questionCounter, setQuestionCounter] = useState(0)
     const [value, setValue] = useState(0)
     const [correctAnswers, setCorrect] = useState(0)
-    const [minutes, setMinutes] = useState(0);
-    const [seconds, setSeconds] =  useState(5);
+    const [minutes, setMinutes] = useState(1);
+    const [seconds, setSeconds] =  useState(0);
     useEffect(()=>{
     const interval = setInterval(() => {
             if (seconds > 0) {

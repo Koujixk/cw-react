@@ -1,10 +1,8 @@
 import React from 'react'
 import { QuestionContainer } from '../../components/QuestionContainer/QuestionContainer'
 
-export const Questions = () => {
+export const ResultWindow = () => {
   return (
-    <div>
-        <QuestionContainer isStartWindow={false}/>
-    </div>
+    <QuestionContainer isStartWindow={false}/>
   )
 }

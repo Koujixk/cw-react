@@ -39,145 +39,145 @@ const questions = [
   },
   {
     id:3,
-    title: 'What JS is?',
+    title: ' What gets wetter the more it dries?',
     answers: [
       {
-        name: "Program language",
-        correct: true
-      },
-      {
-        name: "Library in Frontend",
+        name: "Pc",
         correct: false
       },
       {
-        name: "Syntax sugar",
+        name: "Hand",
+        correct: false
+      },
+      {
+        name: "Towel",
         correct: false
       }
     ]
   },
   {
     id:4,
-    title: "What is capital of Britain?",
+    title: "What is it that lives if it is fed, and dies if you give it a drink?",
     answers: [
         {
-            name: 'Manchester',
-            correct: false
-        },
-        {
-            name: 'London',
+            name: 'Fire',
             correct: true
         },
         {
-            name: 'Washington',
+            name: 'dog',
+            correct: false
+        },
+        {
+            name: 'your drunk friend',
             correct: false
         }
     ]
   },
   {
     id:5,
-    title: 'What JS is?',
+    title: 'How many months in 1 year?',
     answers: [
       {
-        name: "Program language",
+        name: "12",
         correct: true
       },
       {
-        name: "Library in Frontend",
+        name: "13",
         correct: false
       },
       {
-        name: "Syntax sugar",
+        name: "11",
         correct: false
       }
     ]
   },
   {
     id:6,
-    title: "What is capital of Britain?",
+    title: " Which weighs more, a pound of feathers or a pound of bricks?",
     answers: [
         {
-            name: 'Manchester',
+            name: 'feathers',
             correct: false
         },
         {
-            name: 'London',
+            name: 'bricks',
             correct: true
         },
         {
-            name: 'Washington',
+            name: 'neither',
             correct: false
         }
     ]
   },
   {
     id:7,
-    title: 'What JS is?',
+    title: 'What gets sharper the more you use it?',
     answers: [
       {
-        name: "Program language",
+        name: "brain",
         correct: true
       },
       {
-        name: "Library in Frontend",
+        name: "sword",
         correct: false
       },
       {
-        name: "Syntax sugar",
+        name: "fork",
         correct: false
       }
     ]
   },
   {
     id:8,
-    title: "What is capital of Britain?",
+    title: "How much dirt is there in a hole that is 3 feet deep, 6 feet long, and 4 feet wide?",
     answers: [
         {
-            name: 'Manchester',
+            name: '40kg',
             correct: false
         },
         {
-            name: 'London',
+            name: "it's not dirt it's sand",
+            correct: false
+        },
+        {
+            name: 'there is no dirt',
             correct: true
-        },
-        {
-            name: 'Washington',
-            correct: false
         }
     ]
   },
   {
     id:9,
-    title: 'What JS is?',
+    title: 'What gets bigger and bigger the more you take away from it?',
     answers: [
       {
-        name: "Program language",
+        name: "hole",
         correct: true
       },
       {
-        name: "Library in Frontend",
+        name: "idk",
         correct: false
       },
       {
-        name: "Syntax sugar",
+        name: "sugar",
         correct: false
       }
     ]
   },
   {
     id:10,
-    title: "What is capital of Britain?",
+    title: "What is capital of USA?",
     answers: [
         {
-            name: 'Manchester',
+            name: 'Detroit',
             correct: false
         },
         {
-            name: 'London',
-            correct: true
+            name: 'New York',
+            correct: false
         },
         {
             name: 'Washington',
-            correct: false
+            correct: true
         }
     ]
   }
